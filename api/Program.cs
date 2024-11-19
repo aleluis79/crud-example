@@ -1,4 +1,5 @@
 using api.Services;
+using Scalar.AspNetCore;
 
 const string MyCustomPolicy = "_myCustomPolicy";
 
@@ -22,8 +23,9 @@ var app = builder.Build();
 //Configure the HTTP request pipeline.
 //if (app.Environment.IsDevelopment())
 //{
-app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwagger(options => options.RouteTemplate = "/openapi/{documentName}.json");
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json", "My API V1"));
+app.MapScalarApiReference();
 //}
 
 //app.UseHttpsRedirection();
