@@ -1,0 +1,25 @@
+@let todoId = id();
+@let labelBtn = todoId ? 'Update' : 'Create';
+
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <div class="item">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" autocomplete="off">
+    </div>
+    <div class="item">
+      <label for="description">Description</label>
+      <input type="text" id="description" formControlName="description" autocomplete="off">
+    </div>
+    @if (todoId) {
+      <div class="item">
+        <label for="isComplete">Is Complete</label>
+        <input type="checkbox" id="isComplete" formControlName="isComplete">
+      </div>
+    }
+    <div class="actions">
+      <button type="submit">{{ labelBtn }}</button>&nbsp;
+      <button type="button" (click)="router.navigate(['/todos'])">Cancel</button>
+    </div>
+  </form>
+</div>

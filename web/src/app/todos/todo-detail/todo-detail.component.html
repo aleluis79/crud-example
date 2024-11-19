@@ -1,0 +1,27 @@
+@let _todo = todo();
+
+<div class="container">
+  @if (_todo) {
+    <div class="item">
+      <label>Id</label>
+      <span>{{ id()}}</span>
+    </div>
+    <div class="item">
+      <label>Name</label>
+      <span>{{ _todo.name }}</span>
+    </div>
+    <div class="item">
+      <label>Description</label>
+      <span>{{ _todo.description }}</span>
+    </div>
+    <div class="item">
+      <label>Is Complete</label>
+      <span>{{ _todo.isComplete }}</span>
+    </div>
+    <div class="item">
+      <label>Created</label>
+      <span>{{ _todo.created | date: 'dd-MM-yyyy' }}</span>
+    </div>
+    <label class="back"><a routerLink="/todos">👈 Back</a></label>
+  }
+</div>

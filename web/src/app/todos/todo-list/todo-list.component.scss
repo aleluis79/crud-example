@@ -1,0 +1,48 @@
+.done {
+  text-decoration: line-through;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 95vh;
+  padding-top: 5vh ;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  height: auto;
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: rgb(250, 250, 250);
+}
+
+.item:nth-child(odd) {
+  background-color: rgb(241, 241, 241);
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.new {
+  margin-top: 20px;
+}

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="box">
+    <div class="title">Todo List</div>
+    @for (todo of todos(); track todo.id) {
+      <div class="item">
+        <label [class.done]="todo.isComplete">{{ todo.name }}</label>
+        <div class="actions">
+          <label><a routerLink="/todos/{{ todo.id }}">📃 Detail</a></label>
+          <label><a routerLink="/todos/{{ todo.id }}/edit">📝 Edit</a></label>
+          <label><a href="javascript:void(0)" (click)="deleteTodo(todo.id)">❌ Delete</a></label>
+        </div>
+      </div>
+    }
+    <div class="new">
+      <label><a routerLink="/todos/create">➕ Create</a></label>
+    </div>
+  </div>
+</div>
